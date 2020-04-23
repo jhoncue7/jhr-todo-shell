@@ -1,8 +1,12 @@
 ﻿using System;
+using Todo.Models;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace Todo
+namespace Todo.Views
 {
+
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TodoListPage : ContentPage
     {
         public TodoListPage()
@@ -19,20 +23,15 @@ namespace Todo
 
         async void OnItemAdded(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TodoItemPage
-            {
-                BindingContext = new TodoItem()
-            });
+            await Shell.Current.GoToAsync("todo/todoItem");
         }
 
         async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
             {
-                await Navigation.PushAsync(new TodoItemPage
-                {
-                    BindingContext = e.SelectedItem as TodoItem
-                });
+                var selectedItem = e.SelectedItem as TodoItem;
+                await Shell.Current.GoToAsync($"//todo/todoItem?itemid={selectedItem?.ID}");
             }
         }
     }

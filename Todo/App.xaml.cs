@@ -6,28 +6,24 @@ namespace Todo
 {
     public partial class App : Application
     {
-        static TodoItemDatabase database;
+        static TodoItemDatabase _database;
 
         public App()
         {
             InitializeComponent();
 
-            var nav = new NavigationPage(new TodoListPage());
-            nav.BarBackgroundColor = (Color)App.Current.Resources["primaryGreen"];
-            nav.BarTextColor = Color.White;
-
-            MainPage = nav;
+            MainPage = new AppShell();
         }
 
         public static TodoItemDatabase Database
         {
             get
             {
-                if (database == null)
+                if (_database == null)
                 {
-                    database = new TodoItemDatabase();
+                    _database = new TodoItemDatabase();
                 }
-                return database;
+                return _database;
             }
         }
 

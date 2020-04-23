@@ -108,6 +108,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="info.png" />
     <Content Include="plus.png" />
     <Content Include="check.png" />
     <Content Include="Properties\Default.rd.xml" />
