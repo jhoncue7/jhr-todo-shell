@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:Todo.Controls"
-             xmlns:models="clr-namespace:Todo.Models"
-             x:Class="Todo.Views.TodoListPage" 
+             x:Class="Todo.TodoListPage" 
              Title="Todo">
     <Shell.SearchHandler>
         <controls:TodoItemSearchHandler Placeholder="Enter search term"
@@ -21,7 +20,7 @@
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" Margin="20" ItemSelected="OnListItemSelected">
         <ListView.ItemTemplate>
-            <DataTemplate x:DataType="models:TodoItem">
+            <DataTemplate>
                 <ViewCell>
                     <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />

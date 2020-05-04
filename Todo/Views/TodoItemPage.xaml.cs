@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Todo.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Todo.Views
+namespace Todo
 {
     [QueryProperty("ItemId", "itemid")]
     [XamlCompilation(XamlCompilationOptions.Compile)]

@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Todo.Models
+namespace Todo
 {
     public class TodoItem
     {

@@ -1,9 +1,8 @@
 ﻿using System;
-using Todo.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Todo.Views
+namespace Todo
 {
 
     [XamlCompilation(XamlCompilationOptions.Compile)]

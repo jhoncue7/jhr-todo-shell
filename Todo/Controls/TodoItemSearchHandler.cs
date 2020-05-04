@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Todo.Models;
 using Xamarin.Forms;
 
 namespace Todo.Controls
@@ -18,8 +17,12 @@ namespace Todo.Controls
         {
             base.OnItemSelected(item);
 
+            await Task.Delay(1000);
+
+            var id = ((TodoItem) item).ID;
+
             // Note: strings will be URL encoded for navigation
-            await (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"//todo/todoItem?itemid={((TodoItem)item).ID}");
+            await Shell.Current.GoToAsync($"//todo/todoItem?itemid={id}");
         }
 
         private async Task QueryItems(string oldValue, string newValue)
@@ -35,7 +38,7 @@ namespace Todo.Controls
                 ItemsSource = dbItems
                         .Where(x => x.Name.ToLower()
                         .Contains(newValue.ToLower()))
-                        .ToList<TodoItem>();
+                        .ToList();
             }
         }
     }

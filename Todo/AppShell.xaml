@@ -4,7 +4,7 @@
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
-       xmlns:views="clr-namespace:Todo.Views"
+       xmlns:todo="clr-namespace:Todo"
        Title="TodoShell"
        x:Class="Todo.AppShell">
 
@@ -33,12 +33,12 @@
     <TabBar>
         <Tab Icon="check.png"
              Title="Todo">
-            <ShellContent  ContentTemplate="{DataTemplate views:TodoListPage}" 
+            <ShellContent  ContentTemplate="{DataTemplate todo:TodoListPage}" 
                            Route="todo"/>
         </Tab>
         <Tab Icon="info.png"
              Title="About">
-            <ShellContent ContentTemplate="{DataTemplate views:AboutPage}"
+            <ShellContent ContentTemplate="{DataTemplate todo:AboutPage}"
                           Route="info"/>
         </Tab>
     </TabBar>
